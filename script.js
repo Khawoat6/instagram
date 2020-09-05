@@ -6,10 +6,19 @@ function appendImageElement(keyword, index) {
   galleryElement.appendChild(imgElement);
 }
 
-function run() {
-  for (let i = 1; i <= 9; i++) {
-    appendImageElement('dog', i);
+function searchPhotos(event) {
+  const keyword = event.target.value;
+
+  if (event.key === 'Enter' && keyword !== '') {
+    for (let i = 1; i <= 9; i++) {
+      appendImageElement(keyword, i);
+    }
   }
+}
+
+function run() {
+  const inputElement = document.querySelector('input');
+  inputElement.addEventListener('keydown', searchPhotos);
 }
 
 run();
