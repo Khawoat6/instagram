@@ -6,10 +6,16 @@ function appendImageElement(keyword, index) {
   galleryElement.appendChild(imgElement);
 }
 
+function removePhotos() {
+  const galleryElement = document.querySelector('.gallery');
+  galleryElement.innerHTML = '';
+}
+
 function searchPhotos(event) {
   const keyword = event.target.value;
 
   if (event.key === 'Enter' && keyword !== '') {
+    removePhotos();
     for (let i = 1; i <= 9; i++) {
       appendImageElement(keyword, i);
     }
