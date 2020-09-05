@@ -7,7 +7,9 @@ function appendImageElement(keyword, index) {
 }
 
 function run() {
-  appendImageElement('dog', 1);
+  for (let i = 1; i <= 9; i++) {
+    appendImageElement('dog', i);
+  }
 }
 
 run();
